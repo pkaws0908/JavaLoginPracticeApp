@@ -1,10 +1,10 @@
 trigger: none
 pool: pkagent
 stages:
-  - stage: java installer 
+  - stage: javainstaller 
     jobs:
       - job: installjava
-        steps:
+        steps: 
         - task: JavaToolInstaller@1
           inputs:
             versionSpec: '17'
