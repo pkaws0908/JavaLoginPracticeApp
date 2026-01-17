@@ -1,0 +1,17 @@
+trigger: none
+pool: pkagent
+stages:
+  - stage: java installer 
+    jobs:
+      - job: installjava
+        steps:
+        - task: JavaToolInstaller@1
+          inputs:
+            versionSpec: '17'
+            jdkArchitectureOption: 'x64'
+            jdkSourceOption: 'PreInstalled'
+
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: 'java --version'
